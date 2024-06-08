@@ -7,6 +7,14 @@ public class Lion {
     boolean hasMane;
 
     public Lion(String sex) throws Exception {
+        private Felidae felidae;
+        public Lion(Felidae felidae) {
+            this.felidae = felidae; // объект попадает в переменную класса
+        }
+        public void getKittens() {
+            felidae.getKittens();
+        }
+
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {
@@ -17,10 +25,6 @@ public class Lion {
     }
 
     Feline feline = new Feline();
-
-    public int getKittens() {
-        return feline.getKittens();
-    }
 
     public boolean doesHaveMane() {
         return hasMane;
