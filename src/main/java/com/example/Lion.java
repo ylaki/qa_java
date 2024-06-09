@@ -6,25 +6,33 @@ public class Lion {
 
     boolean hasMane;
 
-    public Lion(String sex) throws Exception {
-        private Felidae felidae;
-        public Lion(Felidae felidae) {
-            this.felidae = felidae; // объект попадает в переменную класса
-        }
-        public void getKittens() {
-            felidae.getKittens();
-        }
+    private Felidae felidae;
 
+    public void wildLion(Felidae felidae) {
+        this.felidae = felidae; // объект попадает в переменную класса
+    }
+
+    public Lion(String sex) throws Exception {
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {
             hasMane = false;
         } else {
-            throw new Exception("Используйте допустимые значения пола животного - самей или самка");
+            throw new Exception("Используйте допустимые значения пола животного - самец или самка");
         }
     }
 
     Feline feline = new Feline();
+
+    /*
+     public int getKittens() {
+        return feline.getKittens();
+    }
+     */
+
+    public int getKittens() {
+        return felidae.getKittens();
+    }
 
     public boolean doesHaveMane() {
         return hasMane;
