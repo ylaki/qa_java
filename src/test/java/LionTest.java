@@ -11,7 +11,6 @@ import static org.junit.Assert.assertFalse;
 
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import static org.mockito.Mockito.*;
 
 public class LionTest {
     // Объявляем переменную
@@ -41,7 +40,7 @@ public class LionTest {
     @Test(expected = Exception.class)
     public void lionInvalidSexTest() throws Exception {
         // Создаем обьект lion с неправильным полом
-        Lion lion = new Lion("Небинарный", feline); // Ожидаем Exception
+        new Lion("Небинарный", feline); // Ожидаем Exception
     }
 
     @Test
